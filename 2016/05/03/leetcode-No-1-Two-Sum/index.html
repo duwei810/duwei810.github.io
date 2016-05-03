@@ -17,7 +17,7 @@ Given nums">
 Example:
 
 Given nums">
-<meta property="og:updated_time" content="2016-05-03T13:40:42.000Z">
+<meta property="og:updated_time" content="2016-05-03T13:52:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode No.1 Two Sum">
 <meta name="twitter:description" content="1. Two SumGiven an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
@@ -234,23 +234,8 @@ Given nums">
 <p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
 </blockquote>
 <p><strong>Java实现：</strong></p>
-<pre><code>public class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        int result[]=new int[2];
-        for(int i=0;i&lt;nums.length;i++){
-            int temp=target-nums[i];
-            for(int j=i+1;j&lt;nums.length;j++){
-                if(temp==nums[j]){
-                    result[0]=i;
-                    result[1]=j;
-                    return result;
-                }
-            }
-        }
-        return result;
-    }
-}
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$    public class Solution &#123;</span><br><span class="line">$	    public int[] twoSum(int[] nums, int target) &#123;</span><br><span class="line">$	        int result[]=new int[2];</span><br><span class="line">$	        <span class="keyword">for</span>(int i=0;i&lt;nums.length;i++)&#123;</span><br><span class="line">$	            int temp=target-nums[i];</span><br><span class="line">$	            <span class="keyword">for</span>(int j=i+1;j&lt;nums.length;j++)&#123;</span><br><span class="line">$	                <span class="keyword">if</span>(temp==nums[j])&#123;</span><br><span class="line">$	                    result[0]=i;</span><br><span class="line">$	                    result[1]=j;</span><br><span class="line">$	                    <span class="built_in">return</span> result;</span><br><span class="line">$	                &#125;</span><br><span class="line">$	            &#125;</span><br><span class="line">$	        &#125;</span><br><span class="line">$	        <span class="built_in">return</span> result;</span><br><span class="line">$	    &#125;</span><br><span class="line">$	&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -261,7 +246,7 @@ Given nums">
         <p><span>本文标题:</span><a href="/2016/05/03/LeetCode-No-1-Two-Sum/">LeetCode No.1 Two Sum</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
         <p><span>发布时间:</span>2016年05月03日 - 21时16分</p>
-        <p><span>最后更新:</span>2016年05月03日 - 21时40分</p>
+        <p><span>最后更新:</span>2016年05月03日 - 21时52分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/03/LeetCode-No-1-Two-Sum/" title="LeetCode No.1 Two Sum">http://yoursite.com/2016/05/03/LeetCode-No-1-Two-Sum/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/03/LeetCode-No-1-Two-Sum/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
