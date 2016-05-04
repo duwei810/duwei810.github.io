@@ -17,7 +17,7 @@ Give">
 Example:
 
 Give">
-<meta property="og:updated_time" content="2016-05-04T12:32:42.000Z">
+<meta property="og:updated_time" content="2016-05-04T12:42:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 001 Two Sum">
 <meta name="twitter:description" content="001. Two Sum1. 题目Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
@@ -247,7 +247,7 @@ Give">
 <li>使用System.arraycopy(src, srcPos, dest, destPos, length)方法</li>
 </ol>
 <h4 id="2-3-Hashmap"><a href="#2-3-Hashmap" class="headerlink" title="2.3 Hashmap"></a>2.3 Hashmap</h4><p>用哈希表实现，时间复杂度为O(n),为最优解</p>
-<p>``` java<br>    public class Solution{<br>        public int[] twoSum(int[] nums, int target){<br>            Map<integer, integer=""> map = new HashMap<integer, integer="">();<br>            int[] res = new int[2];<br>            for(int i=0;i&lt;nums.length;i++){<br>                if(map.containsKey(target-nums[i])){<br>                    res[0] = map.get(target-nums[i]);<br>                    res[1] = i;<br>                }<br>                map.put(nums[i],i);<br>            }<br>            return res;<br>        }<br>    }</integer,></integer,></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(target-nums[i]))&#123;</span><br><span class="line">                res[<span class="number">0</span>] = map.get(target-nums[i]);</span><br><span class="line">                res[<span class="number">1</span>] = i;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -259,7 +259,7 @@ Give">
         <p><span>本文标题:</span><a href="/2016/05/04/LeetCode-No-1-Two-Sum/">LeetCode 001 Two Sum</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
         <p><span>发布时间:</span>2016年05月04日 - 00时01分</p>
-        <p><span>最后更新:</span>2016年05月04日 - 20时32分</p>
+        <p><span>最后更新:</span>2016年05月04日 - 20时42分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/04/LeetCode-No-1-Two-Sum/" title="LeetCode 001 Two Sum">http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
