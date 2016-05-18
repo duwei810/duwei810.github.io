@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode 003 Longest Substring Without Repeating Characters | Duwei&#39;s Blog</title>
+  <title>LeetCode 004 Median of Two Sorted Arrays | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 题目Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bbbbb”, the answer is “b”, wit">
+  <meta name="description" content="1. 题目There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+2. 思路2.1 暴力解决直接遍历，复杂度O(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 003 Longest Substring Without Repeating Characters">
-<meta property="og:url" content="http://yoursite.com/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/index.html">
+<meta property="og:title" content="LeetCode 004 Median of Two Sorted Arrays">
+<meta property="og:url" content="http://yoursite.com/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description" content="1. 题目Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bbbbb”, the answer is “b”, wit">
-<meta property="og:updated_time" content="2016-05-12T14:08:09.000Z">
+<meta property="og:description" content="1. 题目There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+2. 思路2.1 暴力解决直接遍历，复杂度O(">
+<meta property="og:updated_time" content="2016-05-12T15:35:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 003 Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="1. 题目Given a string, find the length of the longest substring without repeating characters.
-Examples:
-Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bbbbb”, the answer is “b”, wit">
+<meta name="twitter:title" content="LeetCode 004 Median of Two Sorted Arrays">
+<meta name="twitter:description" content="1. 题目There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+2. 思路2.1 暴力解决直接遍历，复杂度O(">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -186,11 +183,11 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-No-3-Longest-Substring-Without-Repeating-Characters" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-No4-Median-of-Two-Sorted-Arrays" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" class="article-date">
-      <time datetime="2016-05-07T08:16:22.000Z" itemprop="datePublished">2016-05-07</time>
+      <a href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" class="article-date">
+      <time datetime="2016-05-12T14:05:51.000Z" itemprop="datePublished">2016-05-12</time>
 </a>
     </div>
   
@@ -203,7 +200,7 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 003 Longest Substring Without Repeating Characters
+      LeetCode 004 Median of Two Sorted Arrays
     </h1>
   
 
@@ -218,7 +215,7 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hash-Map/">Hash Map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Binary-Search/">Binary Search</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Divide-and-Conquer/">Divide and Conquer</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -228,12 +225,10 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a string, find the length of the longest substring without repeating characters.</p>
-<p><strong>Examples:</strong></p>
-<p>Given “abcabcbb”, the answer is “abc”, which the length is 3.<br>Given “bbbbb”, the answer is “b”, with the length of 1.<br>Given “pwwkew”, the answer is “wke”, with the length of 3. </p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>题目意思是在一个字符串中找一个最长的子串（没有重复的字母）。最简单的思路：从左往右扩展子串，维持2个变量start和end来维持一个新的子串，end不断移动，每加入一个新的字符，判断是否有重复的，如果有重复的，移动start，生成新子串……所以最主要的问题就是如何判断子串中是否有重复的字符，使用Hashmap来查找。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> largest=<span class="number">0</span>;</span><br><span class="line">    Map&lt;Character,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> end=<span class="number">0</span>,start=<span class="number">0</span>;end&lt;s.length();end++)&#123;</span><br><span class="line">        <span class="keyword">char</span> c=s.charAt(end);</span><br><span class="line">        <span class="keyword">if</span>(map.containsKey(c)) </span><br><span class="line">        	start=Math.max(map.get(c)+<span class="number">1</span>, start);</span><br><span class="line">        largest=Math.max(largest,end-start+<span class="number">1</span>); </span><br><span class="line">        map.put(c,end);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> largest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：但是实际上，对于这个题目，不需要用hashmap，因为所有的字符ASCII码加起来也就最多255个，可以直接用数组来代替Hashmap，效率更高。</p>
+        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1-暴力解决"><a href="#2-1-暴力解决" class="headerlink" title="2.1 暴力解决"></a>2.1 暴力解决</h4><p>直接遍历，复杂度O(m+n)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1=nums1.length;</span><br><span class="line">        <span class="keyword">int</span> len2=nums2.length;</span><br><span class="line">        <span class="keyword">double</span> prev=<span class="number">0</span>,last=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid=(len1+len2)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((i+j)&lt;=mid)&#123;</span><br><span class="line">        	prev=last;</span><br><span class="line">        	<span class="keyword">if</span>(i&gt;=len1)&#123;</span><br><span class="line">        		last=nums2[j];</span><br><span class="line">        		j++;</span><br><span class="line">        	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;=len2)&#123;</span><br><span class="line">        		last=nums1[i];</span><br><span class="line">        		i++;</span><br><span class="line">        	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[i]&lt;nums2[j])&#123;</span><br><span class="line">				last=nums1[i];</span><br><span class="line">				i++;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				last=nums2[j];</span><br><span class="line">				j++;</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((len1+len2)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">        	<span class="keyword">return</span> last;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        	<span class="keyword">return</span> (prev+last)/<span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-分治法"><a href="#2-2-分治法" class="headerlink" title="2.2 分治法"></a>2.2 分治法</h4><p>经典的Divide &amp; Conquer的题目，自己并没有想出来，引用一下stellari的高分答案。</p>
 
       
     </div>
@@ -242,13 +237,13 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/">LeetCode 003 Longest Substring Without Repeating Characters</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/">LeetCode 004 Median of Two Sorted Arrays</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
-        <p><span>发布时间:</span>2016年05月07日 - 16时16分</p>
-        <p><span>最后更新:</span>2016年05月12日 - 22时08分</p>
+        <p><span>发布时间:</span>2016年05月12日 - 22时05分</p>
+        <p><span>最后更新:</span>2016年05月12日 - 23时35分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" title="LeetCode 003 Longest Substring Without Repeating Characters">http://yoursite.com/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" title="LeetCode 004 Median of Two Sorted Arrays">http://yoursite.com/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -261,18 +256,9 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
 
 <nav id="article-nav">
   
-    <a href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          LeetCode 004 Median of Two Sorted Arrays
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode 002 Add Two Numbers</div>
+    <a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode 003 Longest Substring Without Repeating Characters</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -283,7 +269,7 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">2.</span> <span class="toc-text">2. 思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-题目"><span class="toc-number">1.</span> <span class="toc-text">1. 题目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">1.1.</span> <span class="toc-text">2. 思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-暴力解决"><span class="toc-number">1.1.1.</span> <span class="toc-text">2.1 暴力解决</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-分治法"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.2 分治法</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -345,7 +331,7 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" data-title="LeetCode 003 Longest Substring Without Repeating Characters" data-url="http://yoursite.com/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" data-title="LeetCode 004 Median of Two Sorted Arrays" data-url="http://yoursite.com/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -368,13 +354,11 @@ Given “abcabcbb”, the answer is “abc”, which the length is 3.Given “bb
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" title="上一篇: LeetCode 004 Median of Two Sorted Arrays">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" title="下一篇: LeetCode 002 Add Two Numbers">
+            <a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" title="下一篇: LeetCode 003 Longest Substring Without Repeating Characters">
                 <i class="fa fa-angle-right"></i>
             </a>
         

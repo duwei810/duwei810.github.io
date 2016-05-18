@@ -126,7 +126,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Array-Hashmap/" style="font-size: 10px;">Array Hashmap</a> <a href="/tags/Linkedlist/" style="font-size: 10px;">Linkedlist</a>
+                        <a href="/tags/Array/" style="font-size: 20px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 20px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/String/" style="font-size: 10px;">String</a>
                     </div>
                 </section>
                 
@@ -137,7 +137,7 @@
                 
                 <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">爱旅行、喜欢接触新鲜事物、迎接新的挑战</div>
+                    <div id="js-aboutme">爱旅行、爱逛街的工科女</div>
                 </section>
                 
             </div>
@@ -183,6 +183,71 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-LeetCode-No4-Median-of-Two-Sorted-Arrays" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/" class="article-date">
+      <time datetime="2016-05-12T14:05:51.000Z" itemprop="datePublished">2016-05-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/12/LeetCode-No4-Median-of-Two-Sorted-Arrays/">LeetCode 004 Median of Two Sorted Arrays</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h2><p>There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1-暴力解决"><a href="#2-1-暴力解决" class="headerlink" title="2.1 暴力解决"></a>2.1 暴力解决</h4><p>直接遍历，复杂度O(m+n)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1=nums1.length;</span><br><span class="line">        <span class="keyword">int</span> len2=nums2.length;</span><br><span class="line">        <span class="keyword">double</span> prev=<span class="number">0</span>,last=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> mid=(len1+len2)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>((i+j)&lt;=mid)&#123;</span><br><span class="line">        	prev=last;</span><br><span class="line">        	<span class="keyword">if</span>(i&gt;=len1)&#123;</span><br><span class="line">        		last=nums2[j];</span><br><span class="line">        		j++;</span><br><span class="line">        	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;=len2)&#123;</span><br><span class="line">        		last=nums1[i];</span><br><span class="line">        		i++;</span><br><span class="line">        	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums1[i]&lt;nums2[j])&#123;</span><br><span class="line">				last=nums1[i];</span><br><span class="line">				i++;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				last=nums2[j];</span><br><span class="line">				j++;</span><br><span class="line">			&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((len1+len2)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">        	<span class="keyword">return</span> last;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        	<span class="keyword">return</span> (prev+last)/<span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-分治法"><a href="#2-2-分治法" class="headerlink" title="2.2 分治法"></a>2.2 分治法</h4><p>经典的Divide &amp; Conquer的题目，自己并没有想出来，引用一下stellari的高分答案。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Binary-Search/">Binary Search</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Divide-and-Conquer/">Divide and Conquer</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-LeetCode-No-3-Longest-Substring-Without-Repeating-Characters" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -230,6 +295,10 @@
 
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hash-Map/">Hash Map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -290,7 +359,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linkedlist/">Linkedlist</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/">Linked List</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
     </div>
 
       
@@ -368,7 +437,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array-Hashmap/">Array Hashmap</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hash-Map/">Hash Map</a></li></ul>
     </div>
 
       
