@@ -5,16 +5,25 @@
   
   <title>文本操作 No 1 | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="https://github.com/jobbole/ProgrammingProjectList
+1. 题目逆转字符串——输入一个字符串，将其逆转并输出。
+2. 思路2.1 方法一通过toCharArray()方法先将字符串转成字符数组,再通过for循环遍历字符数组  
+12345678public static String reverse(String s)&amp;#123;	String res">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文本操作 No 1">
 <meta property="og:url" content="http://yoursite.com/2016/11/13/文本操作-No-1/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-11-13T15:48:58.000Z">
+<meta property="og:description" content="https://github.com/jobbole/ProgrammingProjectList
+1. 题目逆转字符串——输入一个字符串，将其逆转并输出。
+2. 思路2.1 方法一通过toCharArray()方法先将字符串转成字符数组,再通过for循环遍历字符数组  
+12345678public static String reverse(String s)&amp;#123;	String res">
+<meta property="og:updated_time" content="2016-11-13T15:56:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文本操作 No 1">
-<meta name="twitter:description">
+<meta name="twitter:description" content="https://github.com/jobbole/ProgrammingProjectList
+1. 题目逆转字符串——输入一个字符串，将其逆转并输出。
+2. 思路2.1 方法一通过toCharArray()方法先将字符串转成字符数组,再通过for循环遍历字符数组  
+12345678public static String reverse(String s)&amp;#123;	String res">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -205,6 +214,10 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/文本操作/">文本操作</a>
+    </div>
+
 
         
         <div class="clearfix"></div>
@@ -214,7 +227,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p><a href="https://github.com/jobbole/ProgrammingProjectList" target="_blank" rel="external">https://github.com/jobbole/ProgrammingProjectList</a></p>
+<h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>逆转字符串——输入一个字符串，将其逆转并输出。</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1-方法一"><a href="#2-1-方法一" class="headerlink" title="2.1 方法一"></a>2.1 方法一</h4><p>通过toCharArray()方法先将字符串转成字符数组,再通过for循环遍历字符数组  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	String result = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">char</span>[] num = s.toCharArray();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=s.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		result += num[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-方法二"><a href="#2-2-方法二" class="headerlink" title="2.2 方法二"></a>2.2 方法二</h4><p>通过StringBuild类实现字符串逆转</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">stringBuilderReverse</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(s);</span><br><span class="line">	sBuffer.reverse();</span><br><span class="line">	<span class="keyword">return</span> sBuffer.substring(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -225,7 +244,7 @@
         <p><span>本文标题:</span><a href="/2016/11/13/文本操作-No-1/">文本操作 No 1</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
         <p><span>发布时间:</span>2016年11月13日 - 23时48分</p>
-        <p><span>最后更新:</span>2016年11月13日 - 23时48分</p>
+        <p><span>最后更新:</span>2016年11月13日 - 23时56分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/13/文本操作-No-1/" title="文本操作 No 1">http://yoursite.com/2016/11/13/文本操作-No-1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/13/文本操作-No-1/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -254,7 +273,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">2.</span> <span class="toc-text">2. 思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-方法一"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 方法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-方法二"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 方法二</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
