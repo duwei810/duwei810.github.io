@@ -3,27 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode 001 Two Sum | Duwei&#39;s Blog</title>
+  <title>LeetCode 005 Longest Palindromic Substring | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="001. Two Sum1. 题目Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:
-
-Give">
+  <meta name="description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+2. 思路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 001 Two Sum">
-<meta property="og:url" content="http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/index.html">
+<meta property="og:title" content="LeetCode 005 Longest Palindromic Substring">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description" content="001. Two Sum1. 题目Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:
-
-Give">
-<meta property="og:updated_time" content="2016-05-12T14:08:34.000Z">
+<meta property="og:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+2. 思路">
+<meta property="og:updated_time" content="2016-05-18T16:13:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 001 Two Sum">
-<meta name="twitter:description" content="001. Two Sum1. 题目Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution.
-Example:
-
-Give">
+<meta name="twitter:title" content="LeetCode 005 Longest Palindromic Substring">
+<meta name="twitter:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+2. 思路">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -189,11 +183,11 @@ Give">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-No-1-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-No-5-Longest-Palindromic-Substring" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/04/LeetCode-No-1-Two-Sum/" class="article-date">
-      <time datetime="2016-05-03T16:01:29.000Z" itemprop="datePublished">2016-05-04</time>
+      <a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" class="article-date">
+      <time datetime="2016-05-18T15:23:39.000Z" itemprop="datePublished">2016-05-18</time>
 </a>
     </div>
   
@@ -206,7 +200,7 @@ Give">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 001 Two Sum
+      LeetCode 005 Longest Palindromic Substring
     </h1>
   
 
@@ -221,7 +215,7 @@ Give">
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hash-Map/">Hash Map</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -231,24 +225,8 @@ Give">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="001-Two-Sum"><a href="#001-Two-Sum" class="headerlink" title="001. Two Sum"></a>001. Two Sum</h2><h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>You may assume that each input would have exactly one solution.</p>
-<p>Example:</p>
-<blockquote>
-<p>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-</blockquote>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1-双重循环"><a href="#2-1-双重循环" class="headerlink" title="2.1 双重循环"></a>2.1 双重循环</h4><p>暴力解决，时间复杂度O(n^2)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> result[]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> temp=target-nums[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;nums.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(temp==nums[j])&#123;</span><br><span class="line">                    result[<span class="number">0</span>]=i;</span><br><span class="line">                    result[<span class="number">1</span>]=j;</span><br><span class="line">                    <span class="keyword">return</span> result;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-排序"><a href="#2-2-排序" class="headerlink" title="2.2 排序"></a>2.2 排序</h4><p>将给定的数组排序，然后用两个指针从前后扫描逼近给定的值(注意这个思想，可以让O(n^2)的复杂度降为O(n))，结合排序，总的时间复杂度为O(nlog(n))</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] nums_sorted=<span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">        System.arraycopy(nums,<span class="number">0</span>,nums_sorted,<span class="number">0</span>,nums.length);</span><br><span class="line">        <span class="comment">//nums_sorted=nums.clone();</span></span><br><span class="line">        Arrays.sort(nums_sorted);</span><br><span class="line">        <span class="comment">//Find the two numbers. O(n)</span></span><br><span class="line">        <span class="keyword">int</span> start=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end=nums_sorted.length;</span><br><span class="line">        <span class="keyword">while</span>(start&lt;end)&#123;</span><br><span class="line">            <span class="keyword">while</span>(nums_sorted[start]+nums_sorted[--end]&gt;target);</span><br><span class="line">            <span class="keyword">if</span>(nums_sorted[end]+nums_sorted[start]==target)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">while</span>(nums_sorted[++start]+nums_sorted[end]&lt;target);</span><br><span class="line">            <span class="keyword">if</span>(nums_sorted[end]+nums_sorted[start]==target)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] res=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> a=nums_sorted[start];</span><br><span class="line">        <span class="keyword">int</span> b=nums_sorted[end];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==a || nums[i]==b)</span><br><span class="line">                res[index++]=i;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注：Java中复制数组的三种方法</p>
-<ol>
-<li>for循环，效率很低</li>
-<li>使用数组的clone方法，不能复制指定元素</li>
-<li>使用System.arraycopy(src, srcPos, dest, destPos, length)方法</li>
-</ol>
-<h4 id="2-3-Hashmap"><a href="#2-3-Hashmap" class="headerlink" title="2.3 Hashmap"></a>2.3 Hashmap</h4><p>用哈希表实现，时间复杂度为O(n),为最优解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)&#123;</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(target-nums[i]))&#123;</span><br><span class="line">                res[<span class="number">0</span>] = map.get(target-nums[i]);</span><br><span class="line">                res[<span class="number">1</span>] = i;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3>
       
     </div>
     
@@ -256,13 +234,13 @@ Give">
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/04/LeetCode-No-1-Two-Sum/">LeetCode 001 Two Sum</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/">LeetCode 005 Longest Palindromic Substring</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
-        <p><span>发布时间:</span>2016年05月04日 - 00时01分</p>
-        <p><span>最后更新:</span>2016年05月12日 - 22时08分</p>
+        <p><span>发布时间:</span>2016年05月18日 - 23时23分</p>
+        <p><span>最后更新:</span>2016年05月19日 - 00时13分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/04/LeetCode-No-1-Two-Sum/" title="LeetCode 001 Two Sum">http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" title="LeetCode 005 Longest Palindromic Substring">http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -275,18 +253,18 @@ Give">
 
 <nav id="article-nav">
   
-    <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/13/文本操作-No-1/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          LeetCode 002 Add Two Numbers
+          文本操作 No 1
         
       </div>
     </a>
   
   
-    <a href="/2016/05/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode 004 Median of Two Sorted Arrays</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -297,7 +275,7 @@ Give">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#001-Two-Sum"><span class="toc-number">1.</span> <span class="toc-text">001. Two Sum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">1.2.</span> <span class="toc-text">2. 思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-双重循环"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 双重循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-排序"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Hashmap"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 Hashmap</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">2.</span> <span class="toc-text">2. 思路</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -359,7 +337,7 @@ Give">
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/04/LeetCode-No-1-Two-Sum/" data-title="LeetCode 001 Two Sum" data-url="http://yoursite.com/2016/05/04/LeetCode-No-1-Two-Sum/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" data-title="LeetCode 005 Longest Palindromic Substring" data-url="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -382,13 +360,13 @@ Give">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" title="上一篇: LeetCode 002 Add Two Numbers">
+            <a href="/2016/11/13/文本操作-No-1/" title="上一篇: 文本操作 No 1">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/03/hello-world/" title="下一篇: Hello World">
+            <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" title="下一篇: LeetCode 004 Median of Two Sorted Arrays">
                 <i class="fa fa-angle-right"></i>
             </a>
         
