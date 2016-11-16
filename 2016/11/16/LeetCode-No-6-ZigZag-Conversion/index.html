@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode 002 Add Two Numbers | Duwei&#39;s Blog</title>
+  <title>LeetCode No 6 ZigZag Conversion | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="002. Add Two Numbers1. 题目You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two number">
+  <meta name="description" content="1. 题目The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   NA P L S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 002 Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2016/05/04/LeetCode-No-2-Add-Two-Number/index.html">
+<meta property="og:title" content="LeetCode No 6 ZigZag Conversion">
+<meta property="og:url" content="http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description" content="002. Add Two Numbers1. 题目You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two number">
-<meta property="og:updated_time" content="2016-05-12T14:08:51.000Z">
+<meta property="og:description" content="1. 题目The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   NA P L S">
+<meta property="og:updated_time" content="2016-11-16T06:51:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 002 Add Two Numbers">
-<meta name="twitter:description" content="002. Add Two Numbers1. 题目You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two number">
+<meta name="twitter:title" content="LeetCode No 6 ZigZag Conversion">
+<meta name="twitter:description" content="1. 题目The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+
+P   A   H   NA P L S">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -180,11 +186,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-No-2-Add-Two-Number" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-No-6-ZigZag-Conversion" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" class="article-date">
-      <time datetime="2016-05-03T16:01:36.000Z" itemprop="datePublished">2016-05-04</time>
+      <a href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/" class="article-date">
+      <time datetime="2016-11-16T06:46:58.000Z" itemprop="datePublished">2016-11-16</time>
 </a>
     </div>
   
@@ -197,7 +203,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 002 Add Two Numbers
+      LeetCode No 6 ZigZag Conversion
     </h1>
   
 
@@ -212,7 +218,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/">Linked List</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -222,9 +228,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="002-Add-Two-Numbers"><a href="#002-Add-Two-Numbers" class="headerlink" title="002. Add Two Numbers"></a>002. Add Two Numbers</h2><h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p><strong>Input:</strong> (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br><strong>Output:</strong> 7 -&gt; 0 -&gt; 8</p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        ListNode p=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode resNode=p;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="keyword">null</span> || l2!=<span class="keyword">null</span> || flag!=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                flag=flag+l1.val;</span><br><span class="line">                l1=l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                flag=flag+l2.val;</span><br><span class="line">                l2=l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            p.next=<span class="keyword">new</span> ListNode(flag%<span class="number">10</span>);</span><br><span class="line">            flag=flag/<span class="number">10</span>;</span><br><span class="line">            p=p.next;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+<blockquote>
+<p>P   A   H   N<br>A P L S I I G<br>Y   I   R</p>
+</blockquote>
+<p>And then read line by line: “PAHNAPLSIIGYIR”<br>Write the code that will take a string and make this conversion given a number of rows:</p>
+<blockquote>
+<p>string convert(string text, int nRows);<br>convert(“PAYPALISHIRING”, 3) should return “PAHNAPLSIIGYIR”.</p>
+</blockquote>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3>
       
     </div>
     
@@ -232,13 +244,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/">LeetCode 002 Add Two Numbers</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/">LeetCode No 6 ZigZag Conversion</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
-        <p><span>发布时间:</span>2016年05月04日 - 00时01分</p>
-        <p><span>最后更新:</span>2016年05月12日 - 22时08分</p>
+        <p><span>发布时间:</span>2016年11月16日 - 14时46分</p>
+        <p><span>最后更新:</span>2016年11月16日 - 14时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" title="LeetCode 002 Add Two Numbers">http://yoursite.com/2016/05/04/LeetCode-No-2-Add-Two-Number/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/04/LeetCode-No-2-Add-Two-Number/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/" title="LeetCode No 6 ZigZag Conversion">http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -251,18 +263,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          LeetCode 003 Longest Substring Without Repeating Characters
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/04/LeetCode-No-1-Two-Sum/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode 001 Two Sum</div>
+    <a href="/2016/11/16/文本操作-拉丁猪文字游戏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">文本操作 No 2</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -273,7 +276,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#002-Add-Two-Numbers"><span class="toc-number">1.</span> <span class="toc-text">002. Add Two Numbers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">1.2.</span> <span class="toc-text">2. 思路</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-题目"><span class="toc-number">1.</span> <span class="toc-text">1. 题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-思路"><span class="toc-number">2.</span> <span class="toc-text">2. 思路</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -335,7 +338,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/04/LeetCode-No-2-Add-Two-Number/" data-title="LeetCode 002 Add Two Numbers" data-url="http://yoursite.com/2016/05/04/LeetCode-No-2-Add-Two-Number/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/16/LeetCode-No-6-ZigZag-Conversion/" data-title="LeetCode No 6 ZigZag Conversion" data-url="http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -358,13 +361,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/" title="上一篇: LeetCode 003 Longest Substring Without Repeating Characters">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/04/LeetCode-No-1-Two-Sum/" title="下一篇: LeetCode 001 Two Sum">
+            <a href="/2016/11/16/文本操作-拉丁猪文字游戏/" title="下一篇: 文本操作 No 2">
                 <i class="fa fa-angle-right"></i>
             </a>
         
