@@ -184,6 +184,65 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-文本操作-No-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/16/文本操作-No-2/" class="article-date">
+      <time datetime="2016-11-16T03:05:22.000Z" itemprop="datePublished">2016-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/16/文本操作-No-2/">文本操作 No 2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://github.com/jobbole/ProgrammingProjectList" target="_blank" rel="external">https://github.com/jobbole/ProgrammingProjectList</a></p>
+<h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>拉丁猪文字游戏——这是一个英语语言游戏。基本规则是将一个英语单词的第一个辅音音素的字母移动到词尾并且加上后缀-ay（譬如“banana”会变成“anana-bay”）。</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">pigGame</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	String item = <span class="string">"aeiou"</span>;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	String result;</span><br><span class="line">	<span class="keyword">char</span>[] sarray = s.toCharArray();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sarray.length;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(item.indexOf(sarray[i]) == -<span class="number">1</span>)&#123;</span><br><span class="line">			index = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result = s.substring(<span class="number">0</span>,index) + s.substring(index+<span class="number">1</span>,s.length());</span><br><span class="line">	result = result + <span class="string">"-"</span> + s.charAt(index) + <span class="string">"ay"</span>;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/文本操作/">文本操作</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-文本操作-No-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
