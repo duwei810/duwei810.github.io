@@ -15,7 +15,7 @@ P    A    H    NA P L">
 <meta property="og:description" content="1. 题目The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
 P    A    H    NA P L">
-<meta property="og:updated_time" content="2016-11-16T09:13:23.000Z">
+<meta property="og:updated_time" content="2016-11-16T10:11:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode No 6 ZigZag Conversion">
 <meta name="twitter:description" content="1. 题目The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
@@ -130,7 +130,7 @@ P    A    H    NA P L">
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 15px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 10px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a>
+                        <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 15px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 15px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a>
                     </div>
                 </section>
                 
@@ -239,7 +239,7 @@ P    A    H    NA P L">
 <p>convert(“PAYPALISHIRING”, 3) should return “PAHNAPLSIIGYIR”.</p>
 <h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h4><p>比较直观的解法是，用一个字符串数组 string[row] 来存储每一行，最后一拼接就是最终结果。用一个step表示正向还是反向，即上图中从第一行到最后一行还是最后一行到第一行。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length() &lt; numRows || numRows == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        String[] temp = <span class="keyword">new</span> String[numRows];</span><br><span class="line">		Arrays.fill(temp,<span class="string">""</span>);</span><br><span class="line">		String result = <span class="string">""</span>;</span><br><span class="line">		<span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> step = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">			temp[row] += s.charAt(i);</span><br><span class="line">			<span class="keyword">if</span>(row == numRows-<span class="number">1</span>)&#123;</span><br><span class="line">				step = -<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(row == <span class="number">0</span>)&#123;</span><br><span class="line">				step = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			row += step;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(String str:temp)&#123;</span><br><span class="line">			result += str;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h4><p>网上解法<br>发现所有行的重复周期都是 2 <em> nRows - 2<br>对于首行和末行之间的行，还会额外重复一次，重复的这一次距离本周期起始字符的距离是 2 </em> nRows - 2 - 2 * i</p>
+<h4 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h4><p>网上解法<br>发现所有行的重复周期都是 2<em>nRows-2<br>对于首行和末行之间的行，还会额外重复一次，重复的这一次距离本周期起始字符的距离是2</em>nRows-2-2*i</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(numRows &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        String result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">2</span>*numRows - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numRows;i++)&#123;</span><br><span class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;s.length();j+=index)&#123;</span><br><span class="line">        		result += s.charAt(j);</span><br><span class="line">        		<span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; i &lt; numRows-<span class="number">1</span>)&#123;</span><br><span class="line">        			<span class="keyword">int</span> t = j+index-<span class="number">2</span>*i;</span><br><span class="line">        			<span class="keyword">if</span>(t&lt;s.length())&#123;</span><br><span class="line">        				result += s.charAt(t);</span><br><span class="line">        			&#125;</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -252,7 +252,7 @@ P    A    H    NA P L">
         <p><span>本文标题:</span><a href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/">LeetCode No 6 ZigZag Conversion</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
         <p><span>发布时间:</span>2016年11月16日 - 14时46分</p>
-        <p><span>最后更新:</span>2016年11月16日 - 17时13分</p>
+        <p><span>最后更新:</span>2016年11月16日 - 18时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/" title="LeetCode No 6 ZigZag Conversion">http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/16/LeetCode-No-6-ZigZag-Conversion/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -267,6 +267,15 @@ P    A    H    NA P L">
 
 
 <nav id="article-nav">
+  
+    <a href="/2016/11/17/LeetCode-No-7-Reverse-Integer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          LeetCode No 7 Reverse Integer
+        
+      </div>
+    </a>
   
   
     <a href="/2016/11/16/文本操作-拉丁猪文字游戏/" id="article-nav-older" class="article-nav-link-wrap">
@@ -366,7 +375,9 @@ P    A    H    NA P L">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/11/17/LeetCode-No-7-Reverse-Integer/" title="上一篇: LeetCode No 7 Reverse Integer">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -375,7 +386,7 @@ P    A    H    NA P L">
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/">LeetCode No 6 ZigZag Conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/16/文本操作-拉丁猪文字游戏/">文本操作 No 2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/13/文本操作-逆转字符串/">文本操作 No 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/">LeetCode 005 Longest Palindromic Substring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/">LeetCode 004 Median of Two Sorted Arrays</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/">LeetCode 003 Longest Substring Without Repeating Characters</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/LeetCode-No-2-Add-Two-Number/">LeetCode 002 Add Two Numbers</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/LeetCode-No-1-Two-Sum/">LeetCode 001 Two Sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/03/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/文本操作-统计元音字母/">文本操作 No 3 统计元音字母</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/LeetCode-No-7-Reverse-Integer/">LeetCode No 7 Reverse Integer</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/16/LeetCode-No-6-ZigZag-Conversion/">LeetCode No 6 ZigZag Conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/16/文本操作-拉丁猪文字游戏/">文本操作 No 2</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/13/文本操作-逆转字符串/">文本操作 No 1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/">LeetCode 005 Longest Palindromic Substring</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/">LeetCode 004 Median of Two Sorted Arrays</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/07/LeetCode-No-3-Longest-Substring-Without-Repeating-Characters/">LeetCode 003 Longest Substring Without Repeating Characters</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/LeetCode-No-2-Add-Two-Number/">LeetCode 002 Add Two Numbers</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/LeetCode-No-1-Two-Sum/">LeetCode 001 Two Sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/03/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
