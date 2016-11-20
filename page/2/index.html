@@ -126,7 +126,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Array/" style="font-size: 13.33px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 13.33px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 16.67px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a>
+                        <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 15px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a>
                     </div>
                 </section>
                 
@@ -183,6 +183,69 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-LeetCode-No-2-Add-Two-Number" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/04/LeetCode-No-2-Add-Two-Number/" class="article-date">
+      <time datetime="2016-05-03T16:01:36.000Z" itemprop="datePublished">2016-05-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/04/LeetCode-No-2-Add-Two-Number/">LeetCode 002 Add Two Numbers</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="002-Add-Two-Numbers"><a href="#002-Add-Two-Numbers" class="headerlink" title="002. Add Two Numbers"></a>002. Add Two Numbers</h2><h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p><strong>Input:</strong> (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br><strong>Output:</strong> 7 -&gt; 0 -&gt; 8</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> temp;</span><br><span class="line">        ListNode p=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode resNode=p;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="keyword">null</span> || l2!=<span class="keyword">null</span> || flag!=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                flag=flag+l1.val;</span><br><span class="line">                l1=l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                flag=flag+l2.val;</span><br><span class="line">                l2=l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            p.next=<span class="keyword">new</span> ListNode(flag%<span class="number">10</span>);</span><br><span class="line">            flag=flag/<span class="number">10</span>;</span><br><span class="line">            p=p.next;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> resNode.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linked-List/">Linked List</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-LeetCode-No-1-Two-Sum" class="article article-type-post" itemscope itemprop="blogPost">
   
