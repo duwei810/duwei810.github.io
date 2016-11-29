@@ -3,21 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode 005 Longest Palindromic Substring | Duwei&#39;s Blog</title>
+  <title>LeetCode No 13 Roman to Integer | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
+  <meta name="description" content="1. 题目Given a roman numeral, convert it to an integer.Input is guaranteed to be within the range from 1 to 3999.
+2. 思路计数规则：
+
+若干相同数字连写表示的数是这些罗马数字的和，如 III=3；
+小数字在大数字前面表示的数是用大数字减去小数字，如 IV＝4；
+小数字在大数字后面表示的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 005 Longest Palindromic Substring">
-<meta property="og:url" content="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/index.html">
+<meta property="og:title" content="LeetCode No 13 Roman to Integer">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/LeetCode-No-13-Roman-to-Integer/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
-<meta property="og:updated_time" content="2016-11-16T03:11:24.000Z">
+<meta property="og:description" content="1. 题目Given a roman numeral, convert it to an integer.Input is guaranteed to be within the range from 1 to 3999.
+2. 思路计数规则：
+
+若干相同数字连写表示的数是这些罗马数字的和，如 III=3；
+小数字在大数字前面表示的数是用大数字减去小数字，如 IV＝4；
+小数字在大数字后面表示的数">
+<meta property="og:updated_time" content="2016-11-29T13:11:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 005 Longest Palindromic Substring">
-<meta name="twitter:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
+<meta name="twitter:title" content="LeetCode No 13 Roman to Integer">
+<meta name="twitter:description" content="1. 题目Given a roman numeral, convert it to an integer.Input is guaranteed to be within the range from 1 to 3999.
+2. 思路计数规则：
+
+若干相同数字连写表示的数是这些罗马数字的和，如 III=3；
+小数字在大数字前面表示的数是用大数字减去小数字，如 IV＝4；
+小数字在大数字后面表示的数">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -183,11 +195,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-No-5-Longest-Palindromic-Substring" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-No-13-Roman-to-Integer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" class="article-date">
-      <time datetime="2016-05-18T15:23:39.000Z" itemprop="datePublished">2016-05-18</time>
+      <a href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/" class="article-date">
+      <time datetime="2016-11-29T13:06:34.000Z" itemprop="datePublished">2016-11-29</time>
 </a>
     </div>
   
@@ -200,7 +212,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 005 Longest Palindromic Substring
+      LeetCode No 13 Roman to Integer
     </h1>
   
 
@@ -215,7 +227,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -225,10 +237,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>动态规划法 O(n^2)<br>　　假设dp[i][j]的值为true，表示字符串s中下标从i到j的字符组成的子串是回文串。那么可以推出：<br>　　dp[i][j] = dp[i+1][j-1] &amp;&amp; s[i] == s[j]</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> length = s.length();</span><br><span class="line">		<span class="keyword">if</span>(s == <span class="keyword">null</span> || length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> s;</span><br><span class="line">		&#125;</span><br><span class="line">		String result = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">boolean</span> dp[][]  = <span class="keyword">new</span> <span class="keyword">boolean</span>[length][length];</span><br><span class="line">		dp[length-<span class="number">1</span>][length-<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">			dp[i][i] = <span class="keyword">true</span>;</span><br><span class="line">			dp[i][i+<span class="number">1</span>] = (s.charAt(i) == s.charAt(i+<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> len=<span class="number">3</span>;len&lt;=length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j;(j=i+len-<span class="number">1</span>)&lt;length;i++)&#123;</span><br><span class="line">				dp[i][j] = (dp[i+<span class="number">1</span>][j-<span class="number">1</span>] &amp;&amp; s.charAt(i) == s.charAt(j));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;i+j&lt;length;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(dp[j][i+j] == <span class="keyword">true</span>)&#123;</span><br><span class="line">					<span class="keyword">return</span> s.substring(j,i+j+<span class="number">1</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a roman numeral, convert it to an integer.<br>Input is guaranteed to be within the range from 1 to 3999.</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>计数规则：</p>
+<ol>
+<li>若干相同数字连写表示的数是这些罗马数字的和，如 III=3；</li>
+<li>小数字在大数字前面表示的数是用大数字减去小数字，如 IV＝4；</li>
+<li>小数字在大数字后面表示的数是用大数字加上小数字，如 VI=6;</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		HashMap&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character,Integer&gt;();</span><br><span class="line">        map.put(<span class="string">'I'</span>, <span class="number">1</span>);</span><br><span class="line">        map.put(<span class="string">'V'</span>, <span class="number">5</span>);</span><br><span class="line">        map.put(<span class="string">'X'</span>, <span class="number">10</span>);</span><br><span class="line">        map.put(<span class="string">'L'</span>, <span class="number">50</span>);</span><br><span class="line">        map.put(<span class="string">'C'</span>, <span class="number">100</span>);</span><br><span class="line">        map.put(<span class="string">'D'</span>, <span class="number">500</span>);</span><br><span class="line">        map.put(<span class="string">'M'</span>, <span class="number">1000</span>);</span><br><span class="line">        <span class="keyword">int</span> value = map.get(s.charAt(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(map.get(s.charAt(i))&gt;map.get(s.charAt(i-<span class="number">1</span>)))&#123;</span><br><span class="line">        		value = value + map.get(s.charAt(i))- <span class="number">2</span>*map.get(s.charAt(i-<span class="number">1</span>)); </span><br><span class="line">        	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        		value += map.get(s.charAt(i));</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -236,13 +252,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/">LeetCode 005 Longest Palindromic Substring</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/">LeetCode No 13 Roman to Integer</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
-        <p><span>发布时间:</span>2016年05月18日 - 23时23分</p>
-        <p><span>最后更新:</span>2016年11月16日 - 11时11分</p>
+        <p><span>发布时间:</span>2016年11月29日 - 21时06分</p>
+        <p><span>最后更新:</span>2016年11月29日 - 21时11分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" title="LeetCode 005 Longest Palindromic Substring">http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/" title="LeetCode No 13 Roman to Integer">http://yoursite.com/2016/11/29/LeetCode-No-13-Roman-to-Integer/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/29/LeetCode-No-13-Roman-to-Integer/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -255,18 +271,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/13/文本操作-逆转字符串/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          文本操作 No 1
+          LeetCode No 14 Longest Common Prefix
         
       </div>
     </a>
   
   
-    <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode 004 Median of Two Sorted Arrays</div>
+    <a href="/2016/11/29/LeetCode-No-12-Integer-to-Roman/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode No 12 Integer to Roman</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -339,7 +355,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" data-title="LeetCode 005 Longest Palindromic Substring" data-url="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/29/LeetCode-No-13-Roman-to-Integer/" data-title="LeetCode No 13 Roman to Integer" data-url="http://yoursite.com/2016/11/29/LeetCode-No-13-Roman-to-Integer/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -362,13 +378,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/13/文本操作-逆转字符串/" title="上一篇: 文本操作 No 1">
+            <a href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" title="上一篇: LeetCode No 14 Longest Common Prefix">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" title="下一篇: LeetCode 004 Median of Two Sorted Arrays">
+            <a href="/2016/11/29/LeetCode-No-12-Integer-to-Roman/" title="下一篇: LeetCode No 12 Integer to Roman">
                 <i class="fa fa-angle-right"></i>
             </a>
         

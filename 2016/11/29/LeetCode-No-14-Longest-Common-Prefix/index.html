@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode 005 Longest Palindromic Substring | Duwei&#39;s Blog</title>
+  <title>LeetCode No 14 Longest Common Prefix | Duwei&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
+  <meta name="description" content="1. 题目Write a function to find the longest common prefix string amongst an array of strings.
+2. 思路如：“abcd”、“abefh”、“absyz”则其最长公共前缀为”ab”；再如：“abcdefg”、“abcfg”、“gabcdest”则其最长公共前缀为空。通过举例说明可知，这里的最长公共前缀指的是从每">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 005 Longest Palindromic Substring">
-<meta property="og:url" content="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/index.html">
+<meta property="og:title" content="LeetCode No 14 Longest Common Prefix">
+<meta property="og:url" content="http://yoursite.com/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/index.html">
 <meta property="og:site_name" content="Duwei's Blog">
-<meta property="og:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
-<meta property="og:updated_time" content="2016-11-16T03:11:24.000Z">
+<meta property="og:description" content="1. 题目Write a function to find the longest common prefix string amongst an array of strings.
+2. 思路如：“abcd”、“abefh”、“absyz”则其最长公共前缀为”ab”；再如：“abcdefg”、“abcfg”、“gabcdest”则其最长公共前缀为空。通过举例说明可知，这里的最长公共前缀指的是从每">
+<meta property="og:updated_time" content="2016-11-29T13:15:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 005 Longest Palindromic Substring">
-<meta name="twitter:description" content="1. 题目Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
-2. 思路动态规划法 O(n^2)　　假">
+<meta name="twitter:title" content="LeetCode No 14 Longest Common Prefix">
+<meta name="twitter:description" content="1. 题目Write a function to find the longest common prefix string amongst an array of strings.
+2. 思路如：“abcd”、“abefh”、“absyz”则其最长公共前缀为”ab”；再如：“abcdefg”、“abcfg”、“gabcdest”则其最长公共前缀为空。通过举例说明可知，这里的最长公共前缀指的是从每">
   
     <link rel="alternative" href="/atom.xml" title="Duwei&#39;s Blog" type="application/atom+xml">
   
@@ -183,11 +183,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-LeetCode-No-5-Longest-Palindromic-Substring" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LeetCode-No-14-Longest-Common-Prefix" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" class="article-date">
-      <time datetime="2016-05-18T15:23:39.000Z" itemprop="datePublished">2016-05-18</time>
+      <a href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" class="article-date">
+      <time datetime="2016-11-29T13:12:38.000Z" itemprop="datePublished">2016-11-29</time>
 </a>
     </div>
   
@@ -200,7 +200,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode 005 Longest Palindromic Substring
+      LeetCode No 14 Longest Common Prefix
     </h1>
   
 
@@ -209,7 +209,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
     </div>
 
 
@@ -225,10 +225,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.</p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>动态规划法 O(n^2)<br>　　假设dp[i][j]的值为true，表示字符串s中下标从i到j的字符组成的子串是回文串。那么可以推出：<br>　　dp[i][j] = dp[i+1][j-1] &amp;&amp; s[i] == s[j]</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> length = s.length();</span><br><span class="line">		<span class="keyword">if</span>(s == <span class="keyword">null</span> || length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> s;</span><br><span class="line">		&#125;</span><br><span class="line">		String result = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">boolean</span> dp[][]  = <span class="keyword">new</span> <span class="keyword">boolean</span>[length][length];</span><br><span class="line">		dp[length-<span class="number">1</span>][length-<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">			dp[i][i] = <span class="keyword">true</span>;</span><br><span class="line">			dp[i][i+<span class="number">1</span>] = (s.charAt(i) == s.charAt(i+<span class="number">1</span>));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> len=<span class="number">3</span>;len&lt;=length;len++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,j;(j=i+len-<span class="number">1</span>)&lt;length;i++)&#123;</span><br><span class="line">				dp[i][j] = (dp[i+<span class="number">1</span>][j-<span class="number">1</span>] &amp;&amp; s.charAt(i) == s.charAt(j));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=length-<span class="number">1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;i+j&lt;length;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(dp[j][i+j] == <span class="keyword">true</span>)&#123;</span><br><span class="line">					<span class="keyword">return</span> s.substring(j,i+j+<span class="number">1</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>如：“abcd”、“abefh”、“absyz”则其最长公共前缀为”ab”；再如：“abcdefg”、“abcfg”、“gabcdest”则其最长公共前缀为空。通过举例说明可知，这里的最长公共前缀指的是从每个字符串的第一个位置开始，若都相同，则匹配下一个，直到出现一个不相同或者某个字符串完结为止。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        String result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span>(strs.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strs.length == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;strs[<span class="number">0</span>].length();i++)&#123;</span><br><span class="line">            	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;strs.length;j++)&#123;</span><br><span class="line">            		<span class="keyword">if</span>(i &gt;= strs[j].length() || strs[<span class="number">0</span>].charAt(i) != strs[j].charAt(i))&#123;</span><br><span class="line">            			<span class="keyword">return</span> result;</span><br><span class="line">            		&#125;</span><br><span class="line">            	&#125;</span><br><span class="line">            	result += strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -236,13 +235,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/">LeetCode 005 Longest Palindromic Substring</a></p>
+        <p><span>本文标题:</span><a href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/">LeetCode No 14 Longest Common Prefix</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Du Wei 的个人博客">Du Wei</a></p>
-        <p><span>发布时间:</span>2016年05月18日 - 23时23分</p>
-        <p><span>最后更新:</span>2016年11月16日 - 11时11分</p>
+        <p><span>发布时间:</span>2016年11月29日 - 21时12分</p>
+        <p><span>最后更新:</span>2016年11月29日 - 21时15分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" title="LeetCode 005 Longest Palindromic Substring">http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" title="LeetCode No 14 Longest Common Prefix">http://yoursite.com/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/　　作者: Du Wei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -255,18 +254,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/13/文本操作-逆转字符串/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          文本操作 No 1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode 004 Median of Two Sorted Arrays</div>
+    <a href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode No 13 Roman to Integer</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -339,7 +329,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/" data-title="LeetCode 005 Longest Palindromic Substring" data-url="http://yoursite.com/2016/05/18/LeetCode-No-5-Longest-Palindromic-Substring/"></div>
+    <div class="ds-thread" data-thread-key="2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" data-title="LeetCode No 14 Longest Common Prefix" data-url="http://yoursite.com/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -362,13 +352,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/13/文本操作-逆转字符串/" title="上一篇: 文本操作 No 1">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/05/12/LeetCode-No-4-Median-of-Two-Sorted-Arrays/" title="下一篇: LeetCode 004 Median of Two Sorted Arrays">
+            <a href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/" title="下一篇: LeetCode No 13 Roman to Integer">
                 <i class="fa fa-angle-right"></i>
             </a>
         

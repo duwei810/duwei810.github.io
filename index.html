@@ -126,7 +126,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Array/" style="font-size: 16.67px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 13.33px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 20px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a> <a href="/tags/Two-Pointers/" style="font-size: 10px;">Two Pointers</a>
+                        <a href="/tags/Array/" style="font-size: 15px;">Array</a> <a href="/tags/Binary-Search/" style="font-size: 10px;">Binary Search</a> <a href="/tags/Divide-and-Conquer/" style="font-size: 10px;">Divide and Conquer</a> <a href="/tags/Hash-Map/" style="font-size: 12.5px;">Hash Map</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Math/" style="font-size: 17.5px;">Math</a> <a href="/tags/String/" style="font-size: 20px;">String</a> <a href="/tags/Two-Pointers/" style="font-size: 10px;">Two Pointers</a>
                     </div>
                 </section>
                 
@@ -183,6 +183,137 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-LeetCode-No-14-Longest-Common-Prefix" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/" class="article-date">
+      <time datetime="2016-11-29T13:12:38.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/29/LeetCode-No-14-Longest-Common-Prefix/">LeetCode No 14 Longest Common Prefix</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>如：“abcd”、“abefh”、“absyz”则其最长公共前缀为”ab”；再如：“abcdefg”、“abcfg”、“gabcdest”则其最长公共前缀为空。通过举例说明可知，这里的最长公共前缀指的是从每个字符串的第一个位置开始，若都相同，则匹配下一个，直到出现一个不相同或者某个字符串完结为止。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">longestCommonPrefix</span><span class="params">(String[] strs)</span> </span>&#123;</span><br><span class="line">        String result = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span>(strs.length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strs.length == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;strs[<span class="number">0</span>].length();i++)&#123;</span><br><span class="line">            	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;strs.length;j++)&#123;</span><br><span class="line">            		<span class="keyword">if</span>(i &gt;= strs[j].length() || strs[<span class="number">0</span>].charAt(i) != strs[j].charAt(i))&#123;</span><br><span class="line">            			<span class="keyword">return</span> result;</span><br><span class="line">            		&#125;</span><br><span class="line">            	&#125;</span><br><span class="line">            	result += strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-LeetCode-No-13-Roman-to-Integer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/" class="article-date">
+      <time datetime="2016-11-29T13:06:34.000Z" itemprop="datePublished">2016-11-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/29/LeetCode-No-13-Roman-to-Integer/">LeetCode No 13 Roman to Integer</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>Given a roman numeral, convert it to an integer.<br>Input is guaranteed to be within the range from 1 to 3999.</p>
+<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><p>计数规则：</p>
+<ol>
+<li>若干相同数字连写表示的数是这些罗马数字的和，如 III=3；</li>
+<li>小数字在大数字前面表示的数是用大数字减去小数字，如 IV＝4；</li>
+<li>小数字在大数字后面表示的数是用大数字加上小数字，如 VI=6;</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">romanToInt</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		HashMap&lt;Character,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character,Integer&gt;();</span><br><span class="line">        map.put(<span class="string">'I'</span>, <span class="number">1</span>);</span><br><span class="line">        map.put(<span class="string">'V'</span>, <span class="number">5</span>);</span><br><span class="line">        map.put(<span class="string">'X'</span>, <span class="number">10</span>);</span><br><span class="line">        map.put(<span class="string">'L'</span>, <span class="number">50</span>);</span><br><span class="line">        map.put(<span class="string">'C'</span>, <span class="number">100</span>);</span><br><span class="line">        map.put(<span class="string">'D'</span>, <span class="number">500</span>);</span><br><span class="line">        map.put(<span class="string">'M'</span>, <span class="number">1000</span>);</span><br><span class="line">        <span class="keyword">int</span> value = map.get(s.charAt(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">        	<span class="keyword">if</span>(map.get(s.charAt(i))&gt;map.get(s.charAt(i-<span class="number">1</span>)))&#123;</span><br><span class="line">        		value = value + map.get(s.charAt(i))- <span class="number">2</span>*map.get(s.charAt(i-<span class="number">1</span>)); </span><br><span class="line">        	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        		value += map.get(s.charAt(i));</span><br><span class="line">        	&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/">Math</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-LeetCode-No-12-Integer-to-Roman" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -681,128 +812,6 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-文本操作-拉丁猪文字游戏" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/16/文本操作-拉丁猪文字游戏/" class="article-date">
-      <time datetime="2016-11-16T03:05:22.000Z" itemprop="datePublished">2016-11-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/文本操作-拉丁猪文字游戏/">文本操作 No 2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a href="https://github.com/jobbole/ProgrammingProjectList" target="_blank" rel="external">https://github.com/jobbole/ProgrammingProjectList</a></p>
-<h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>拉丁猪文字游戏——这是一个英语语言游戏。基本规则是将一个英语单词的第一个辅音音素的字母移动到词尾并且加上后缀-ay（譬如“banana”会变成“anana-bay”）。</p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">pigGame</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	String item = <span class="string">"aeiou"</span>;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	String result;</span><br><span class="line">	<span class="keyword">char</span>[] sarray = s.toCharArray();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sarray.length;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(item.indexOf(sarray[i]) == -<span class="number">1</span>)&#123;</span><br><span class="line">			index = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result = s.substring(<span class="number">0</span>,index) + s.substring(index+<span class="number">1</span>,s.length());</span><br><span class="line">	result = result + <span class="string">"-"</span> + s.charAt(index) + <span class="string">"ay"</span>;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/文本操作/">文本操作</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-文本操作-逆转字符串" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/13/文本操作-逆转字符串/" class="article-date">
-      <time datetime="2016-11-13T15:48:58.000Z" itemprop="datePublished">2016-11-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/13/文本操作-逆转字符串/">文本操作 No 1</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a href="https://github.com/jobbole/ProgrammingProjectList" target="_blank" rel="external">https://github.com/jobbole/ProgrammingProjectList</a></p>
-<h3 id="1-题目"><a href="#1-题目" class="headerlink" title="1. 题目"></a>1. 题目</h3><p>逆转字符串——输入一个字符串，将其逆转并输出。</p>
-<h3 id="2-思路"><a href="#2-思路" class="headerlink" title="2. 思路"></a>2. 思路</h3><h4 id="2-1-方法一"><a href="#2-1-方法一" class="headerlink" title="2.1 方法一"></a>2.1 方法一</h4><p>通过toCharArray()方法先将字符串转成字符数组,再通过for循环遍历字符数组  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">reverse</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	String result = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">char</span>[] num = s.toCharArray();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=s.length()-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">		result += num[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-方法二"><a href="#2-2-方法二" class="headerlink" title="2.2 方法二"></a>2.2 方法二</h4><p>通过StringBuild类实现字符串逆转</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">stringBuilderReverse</span><span class="params">(String s)</span></span>&#123;</span><br><span class="line">	StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(s);</span><br><span class="line">	sBuffer.reverse();</span><br><span class="line">	<span class="keyword">return</span> sBuffer.substring(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/文本操作/">文本操作</a>
-    </div>
-
-
-      
       
       <div class="clearfix"></div>
     </div>
